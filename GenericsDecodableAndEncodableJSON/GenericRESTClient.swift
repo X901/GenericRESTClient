@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol GenericRESTClint {
+protocol GenericRESTClient {
     func getGenericData<T: Decodable>(urlString: String, completion: @escaping (T) -> ())
     func postGenericData<T:Encodable>(urlString: String, parameter: T, completion: @escaping (Data?, URLResponse?, Error?) -> ())
 }
 
-extension GenericRESTClint {
+extension GenericRESTClient {
 
          func getGenericData<T: Decodable>(urlString: String, completion: @escaping (T) -> ()) {
         

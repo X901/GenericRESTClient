@@ -11,7 +11,7 @@ import UIKit
 //How to Use ?
 //1. Move GenericRESTClint file to your project
 //2. Add GenericRESTClint Delegate
-class ViewController: UIViewController,GenericRESTClint {
+class ViewController: UIViewController,GenericRESTClient {
     
    
     
