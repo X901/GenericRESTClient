@@ -6,7 +6,7 @@
 //  Copyright © 2018 X901. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol GenericRESTClint {
     func getGenericData<T: Decodable>(urlString: String, completion: @escaping (T) -> ())
