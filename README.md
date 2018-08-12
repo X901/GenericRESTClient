@@ -1,8 +1,8 @@
-## GenericRESTClint
+## GenericRESTClient
 
 This is a simple project will help you make a RESTFull API Reguest using Decodable and Encodable 
 
-What you need to do is copying and pasting `GenericRESTClint.swift` to your project
+What you need to do is copying and pasting `GenericRESTClient.swift` to your project
 
 for **Get** reguest use **getGenericData** 
 
