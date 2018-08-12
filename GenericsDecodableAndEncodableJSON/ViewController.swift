@@ -8,97 +8,58 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+//How to Use ?
+//1. Move GenericRESTClint file to your project
+//2. Add GenericRESTClint Delegate
+class ViewController: UIViewController,GenericRESTClint {
+    
+   
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        //How to Use ?
+     
+    
         
-        //1. Creat Model for your JSON Data
-        //2. For Get Reguest use it like this :
         
-        getGenericData(urlString: "API Link Here") { (get: [TestData]) in
+        //3. Creat Model for your JSON Data
+        //4. For Get Reguest use it like this :
+        
+       
+        self.getGenericData(urlString: "API Link Here") { (get: [TestData]) in
             
             print(get)
     
         }
         
-        //3. For Post Reguest use it like this :
+        //5. For Post Reguest use it like this :
         
         //Add Prameter As Object
-        let newAddTest = AddTestData(Name: "wael", age: 35, gender: "Male")
+        let newAddTest = AddTestData(Name: "basel", age: 26, gender: "Male")
         
         //Call postGenericData
-        postGenericData(urlString: "API Link Here", parameter: newAddTest) { (post : AddTestData)  in
-            
-            // This is not necessary
-            print(post)
-        }
-        
-    }
+            //API Link Here
 
-    fileprivate func getGenericData<T: Decodable>(urlString: String, completion: @escaping (T) -> ()) {
         
-        let url = URL(string: urlString)
-        URLSession.shared.dataTask(with: url!) { (data, resp, err) in
-            if let err = err {
-                print("Failed to fetch data:", err)
-                return
-            }
-            
-            
-            guard let data = data else { return }
-            
-            do {
-                let obj = try JSONDecoder().decode(T.self, from: data)
-                completion(obj)
-            } catch let jsonErr {
-                print("Failed to decode json:", jsonErr)
-            }
-            }.resume()
-    }
-    
-    fileprivate func postGenericData<T:Encodable>(urlString: String, parameter: T, completion: @escaping (T) -> ()) {
-        
-        let url = URL(string: urlString)
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        do {
-            let jsonBody = try JSONEncoder().encode(parameter)
-            
-            request.httpBody = jsonBody
-            
-            
-            completion(parameter)
-            
-            
-            
-        } catch let jsonErr {
-            print("Failed to encode json:", jsonErr)
-        }
-        
-        
-        let session = URLSession.shared
-        _ = session.dataTask(with: request) { (data,respon, error) in
+        self.postGenericData(urlString: "API Link Here", parameter: newAddTest) { (data, response, error) in
             
             if let error = error {
                 print("Failed to post data:", error)
                 return
-            }
+                
+            } else {
             
-            if let httpResponse = respon as? HTTPURLResponse {
+            if let httpResponse = response as? HTTPURLResponse {
                 print("statusCode: \(httpResponse.statusCode)")
             }
-            
-            
-            
-            }.resume()
+                
+            }
+        }
         
     }
 
+
+    
 
 
 
@@ -120,4 +81,3 @@ struct AddTestData: Encodable {
     let gender : String
     
 }
-

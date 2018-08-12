@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD74BF86212075AE00737A43 /* GenericRESTClint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD74BF85212075AD00737A43 /* GenericRESTClint.swift */; };
 		FD970283211EFF920080C27E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD970282211EFF920080C27E /* AppDelegate.swift */; };
 		FD970285211EFF920080C27E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD970284211EFF920080C27E /* ViewController.swift */; };
 		FD970288211EFF920080C27E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD970286211EFF920080C27E /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD74BF85212075AD00737A43 /* GenericRESTClint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericRESTClint.swift; sourceTree = "<group>"; };
 		FD97027F211EFF920080C27E /* GenericsDecodableAndEncodableJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenericsDecodableAndEncodableJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD970282211EFF920080C27E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD970284211EFF920080C27E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				FD970282211EFF920080C27E /* AppDelegate.swift */,
+				FD74BF85212075AD00737A43 /* GenericRESTClint.swift */,
 				FD970284211EFF920080C27E /* ViewController.swift */,
 				FD970286211EFF920080C27E /* Main.storyboard */,
 				FD970289211EFF950080C27E /* Assets.xcassets */,
@@ -137,6 +140,7 @@
 			files = (
 				FD970285211EFF920080C27E /* ViewController.swift in Sources */,
 				FD970283211EFF920080C27E /* AppDelegate.swift in Sources */,
+				FD74BF86212075AE00737A43 /* GenericRESTClint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
