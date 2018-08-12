@@ -24,8 +24,7 @@ class ViewController: UIViewController,GenericRESTClint {
         
         //3. Creat Model for your JSON Data
         //4. For Get Reguest use it like this :
-        
-       
+
         self.getGenericData(urlString: "API Link Here") { (get: [TestData]) in
             
             print(get)
@@ -33,13 +32,11 @@ class ViewController: UIViewController,GenericRESTClint {
         }
         
         //5. For Post Reguest use it like this :
-        
         //Add Prameter As Object
+        
         let newAddTest = AddTestData(Name: "basel", age: 26, gender: "Male")
         
         //Call postGenericData
-            //API Link Here
-
         
         self.postGenericData(urlString: "API Link Here", parameter: newAddTest) { (data, response, error) in
             
